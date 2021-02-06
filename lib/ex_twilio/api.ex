@@ -137,7 +137,10 @@ defmodule ExTwilio.Api do
   """
   @spec auth_header(options :: list) :: list
   def auth_header(options \\ []) do
-    auth_header([], {options[:account], options[:token]})
+    IO.puts("=================================")
+    options |> IO.inspect()
+    IO.puts("=================================")
+    auth_header(options, {options[:account], options[:token]})
   end
 
   @doc """
